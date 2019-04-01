@@ -33,8 +33,6 @@ var Counter = React.createClass({
   reset: function() {
     this.setState({
       counter: 0
-      //int: 100,
-      //num: 25,
     });
   },
 
