@@ -2,49 +2,39 @@ var Counter = React.createClass({
   getInitialState: function() {
     console.log("Metoda inicjalizacji - getInitialState");
     return {
-      counter: 0,
-      int: 100,
-      num: 25
+      counter: 0
     };
   },
 
   increment: function() {
     this.setState({
-      counter: this.state.counter + 1,
-      int: this.state.int + 1,
-      num: this.state.num + 1
+      counter: this.state.counter + 1
     });
   },
 
   decrement: function() {
     this.setState({
-      counter: this.state.counter - 1,
-      int: this.state.int - 1,
-      num: this.state.num - 1
+      counter: this.state.counter - 1
     });
   },
 
   multiplication: function() {
     this.setState({
-      counter: this.state.counter * 2,
-      int: this.state.int * 2,
-      num: this.state.num * 2
+      counter: this.state.counter * 2
     });
   },
 
   division: function() {
     this.setState({
-      counter: this.state.counter / 2,
-      int: this.state.int / 2,
-      num: this.state.num / 2
+      counter: this.state.counter / 2
     });
   },
 
   reset: function() {
     this.setState({
-      counter: 0,
-      int: 100,
-      num: 25
+      counter: 0
+      //int: 100,
+      //num: 25,
     });
   },
 
@@ -68,16 +58,6 @@ var Counter = React.createClass({
         "button",
         { className: "licznik" },
         "Licznik " + this.state.counter
-      ),
-      React.createElement(
-        "button",
-        { className: "licznik" },
-        "Licznik " + this.state.int
-      ),
-      React.createElement(
-        "button",
-        { className: "licznik" },
-        "Licznik " + this.state.num
       ),
       React.createElement("div", {}),
       React.createElement(
@@ -110,5 +90,10 @@ var Counter = React.createClass({
   }
 });
 
-var app = React.createElement(Counter);
+//var app = React.createElement(Counter);
+var app = React.createElement("div", {}, [
+  React.createElement(Counter),
+  React.createElement(Counter),
+  React.createElement(Counter)
+]);
 ReactDOM.render(app, document.getElementById("app"));
